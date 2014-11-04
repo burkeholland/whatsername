@@ -1,0 +1,1 @@
+wrn.extend = jQuery.extend;

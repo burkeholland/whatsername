@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>whatsername app</title>
+    <meta charset="utf-8" />
+
+    <!-- CSS Order Matters kendo > bootstrap > kendoOverides > whatsername > view CSS -->
+
+    <!-- build:css /thirdparty/thirdparty.css -->
+    
+    <link href="/bower_components/kendo-ui/src/styles/mobile/kendo.mobile.all.css" rel="stylesheet"/>
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+
+    <!-- endbuild -->
+
+    <!-- build:css whatsername.css -->
+    <link href="/shared/css/kendoOverides.css" rel="stylesheet"/>
+    <link href="/shared/css/whatsername.css" rel="stylesheet"/>
+
+    <!-- Views CSS -->
+     <link href="/ui/appInfo/appInfo.css" rel="stylesheet"/>
+
+    <!-- endbuild -->
+
+</head>
+<body>
+
+    <!-- src to wwwBuild includes all of your views and layouts below -->
+
+    <!-- Views -->
+    @@include('./ui/appInfo/appInfoView.html')
+    @@include('./ui/groups/groupList/groupListView.html')
+    @@include('./ui/groups/addGroup/addGroupView.html')
+    @@include('./ui/nameViewer/addName/addNameView.html')
+    @@include('./ui/nameViewer/viewer/viewerView.html')
+
+    <!-- Layouts -->
+    @@include('./shared/layouts/globalLayout.html')
+
+<!-- JS Order Matters namespace > jQuery > kendo > utilities > controller > run app -->
+
+<!-- APP Namespace -->
+<script> this.whatsername = this.wrn = {}; //long and shortcut namespace </script>
+
+<!-- build:js /thirdparty/thirdparty.js -->
+
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/kendo-ui/src/js/kendo.ui.core.js"></script>
+
+<!-- endbuild -->
+
+<!-- build:js whatsername.js -->
+
+<script src="/shared/utilities/extend.js"></script>
+
+<!-- View controllers  -->
+<script src="/ui/groups/groupList/groupListCtrl.js"></script>
+
+<!-- endbuild -->
+
+<!-- Runs Application  -->
+<script>
+wrn.app = new kendo.mobile.Application($(document.body), { 
+    skin: 'flat',
+    transition:'slide'
+});
+</script>
+
+</body>
+</html>
