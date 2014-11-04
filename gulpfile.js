@@ -82,7 +82,7 @@ gulp.task('moveKendoFlatTheme', function(){
 
 gulp.task('moveBootstrapCSSStuff', function(){
     gulp.src(['./wwwDev/bower_components/bootstrap/dist/fonts/**/*.*'])
-        .pipe(gulp.dest('./wwwBuild/thirdparty/fonts'));
+        .pipe(gulp.dest('./wwwBuild/fonts'));
     return gulp.src(['./wwwDev/bower_components/bootstrap/dist/css/bootstrap.css.map'])
         .pipe(gulp.dest('./wwwBuild/thirdparty/'));
 });
@@ -139,7 +139,7 @@ gulp.task('startDevServer', function() {
             port:'3027',
             livereload:true,
             directoryListing: false,
-            open: true
+            open: 'http://localhost:3027'
         }));
 });
 
@@ -151,7 +151,7 @@ gulp.task('startBuildServer', function() {
             port:'3028',
             livereload:false,
             directoryListing: false,
-            open: true
+            open: 'http://localhost:3028'
         }));
 });
 
@@ -164,7 +164,7 @@ gulp.task('watch', function(){
 /**** Tasks ********************************************************************************/
 
 gulp.task('dev', function(callback) {
-    runSequence('cleanDev','runDevTasks', callback);
+    runSequence('cleanDev','runDevTasks','startDevServer','watch', callback);
     return false;
 });
 

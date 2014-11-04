@@ -1,0 +1,29 @@
+.km-plus:after,
+.km-plus:before
+{
+    content: "\e039";
+}
+
+.km-folder:after,
+.km-folder:before
+{
+    content: "\e0a1";
+}
+
+.km-folderPlus:after,
+.km-folderPlus:before
+{
+    content: "\e0a0";
+}
+
+.km-info:after,
+.km-info:before
+{
+    content: "\e0f9";
+}
+
+.km-goBack:after,
+.km-goBack:before
+{
+    content: "\e013";
+}
