@@ -5,13 +5,19 @@
     <title>whatsername app</title>
     <meta charset="utf-8" />
 
-    <!-- CSS Order Matters kendo > bootstrap > kendoOverides > whatsername > view CSS -->
+    <!-- ##### WARNING #### READ THIS ####### 
+        Comments that start with 'build' are used below by gulp to concatenate files. 
+        Careful not to remove or the final build will break.
+    -->
+
+    <!-- CSS include order matters, don't change it! 
+        Order is: kendo > bootstrap > kendoOverides > whatsername > view CSS 
+    -->
 
     <!-- build:css /thirdparty/thirdparty.css -->
     <link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
     <link href="/bower_components/kendo-ui/src/styles/mobile/kendo.mobile.common.css" rel="stylesheet"/>
     <link href="/bower_components/kendo-ui/src/styles/mobile/kendo.mobile.flat.css" rel="stylesheet"/>
-
     <!-- endbuild -->
 
     <!-- build:css whatsername.css -->
@@ -29,7 +35,15 @@
 </head>
 <body>
 
-    <!-- src to wwwBuild includes all of your views and layouts below -->
+    <!-- 
+    Below are templates, views, AND layouts included into this page from
+    src. 
+
+    Order is: template > view > layout
+    -->
+
+    <!-- Templates -->
+    @@include('./ui/groups/groupList/groupListItemTemplate.js')
 
     <!-- Views -->
     @@include('./ui/appInfo/appInfoView.html')
@@ -41,24 +55,27 @@
     <!-- Layouts -->
     @@include('./shared/layouts/globalLayout.html')
 
-<!-- JS Order Matters namespace > jQuery > kendo > utilities > controller > run app -->
+<!-- JS include order matters, don't change it!
+     Order is: namespace > jQuery > kendo > utilities > models > viewModels > run app 
+ -->
 
 <!-- APP Namespace -->
 <script> this.whatsername = this.wrn = {}; //long and shortcut namespace </script>
 
 <!-- build:js /thirdparty/thirdparty.js -->
-
 <script src="/bower_components/jquery/dist/jquery.js"></script>
 <script src="/bower_components/kendo-ui/src/js/kendo.ui.core.js"></script>
-
 <!-- endbuild -->
 
 <!-- build:js whatsername.js -->
-
 <script src="/shared/utilities/extend.js"></script>
 
-<!-- View controllers  -->
-<script src="/ui/groups/groupList/groupListCtrl.js"></script>
+<!-- Models  -->
+<script src="/shared/models/groupModel.js"></script>
+
+<!-- viewModels  -->
+<script src="/ui/groups/groupList/groupListViewModel.js"></script>
+<script src="/ui/groups/addGroup/addGroupViewModel.js"></script>
 
 <!-- endbuild -->
 

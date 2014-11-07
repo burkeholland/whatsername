@@ -3,16 +3,15 @@ data-role="view"
 data-layout="default" 
 data-transition="slide:right" 
 data-model="wrn.groupList.viewModel"
-data-bind="events:{show:show}"
+data-bind="events:{show:show,init:init}"
 >
 	<div data-role="navbar">
 		<a data-align="left" data-role="button" data-rel="drawer" href="#appInfo" data-icon="info"></a>
 		<a data-align="right" data-role="button">edit</a>
 		<a data-align="right" data-icon="plus" data-role="button" href="#addGroupView"></a>
 	</div>
-	<button data-bind="click:goo"></button>
-	<span data-bind="text:model.baz"></span>
-	<ul data-role="listview" data-style="inset">
-        <li data-icon="folder"><a href="#viewerView">group 1</a></li>
+
+	<ul data-role="listview" data-style="inset" data-bind="source: modelData" data-template="groupListItemTemplate">
+        
     </ul>
 </div>

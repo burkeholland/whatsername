@@ -156,7 +156,7 @@ gulp.task('startBuildServer', function() {
 });
 
 //watch
-gulp.task('watch', function(){
+gulp.task('watchDevServer', function(){
     gulp.watch(['src/**/*.*'],['runDevTasks']);
     return gulp.watch(['./.jshintrcCommented.txt'],['validatejsHintRc','runDevTasks']);
 });
@@ -164,11 +164,11 @@ gulp.task('watch', function(){
 /**** Tasks ********************************************************************************/
 
 gulp.task('dev', function(callback) {
-    runSequence('cleanDev','runDevTasks','startDevServer','watch', callback);
+    runSequence('cleanDev','runDevTasks','startDevServer','watchDevServer', callback);
     return false;
 });
 
 gulp.task('build', function(callback) {
-    runSequence('cleanBuild','buildFromDev','cssLint','htmlHint','jsHint','minifyHtml','minifyCss','minifyJs','moveKendoImages','moveKendoFlatTheme','moveBootstrapCSSStuff','startBuildServer', 'reportSize', callback);
+    runSequence('cleanBuild','buildFromDev','cssLint','htmlHint','jsHint','minifyHtml','minifyCss','minifyJs','moveKendoImages','moveKendoFlatTheme','moveBootstrapCSSStuff','reportSize','startBuildServer', callback);
     return false;
 });
