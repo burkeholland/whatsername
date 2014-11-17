@@ -17,7 +17,7 @@
 					this.modelData.add({group:this.groupName,id:wrn.makeId()});
 					this.modelData.sync();
 					this.set('groupName','');
-					e.target.closest('#addGroupView').find('input:text').focus();
+					$(e.target).closest('#addGroupView').find('input:text').focus();
 				}
 			},
 			afterShow:function(e){

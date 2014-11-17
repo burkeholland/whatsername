@@ -14,11 +14,14 @@
                   //other properties or functions you want to observe and expose to html
                   show:function(e){
                         this.currentId = Number(e.view.params.id);
+                        e.view.element.find('input:text').focus();
                   },
                   addPhoto:function(e){
                         var elm = e;
-                        var reader = new FileReader();
+                        var fileInput = $(e.target).closest('#addNameView').find('input:file');
+                        if(fileInput.val() === '' || this.name.replace(' ','') === ''){return false;}
                         var id = this.currentId;
+                        var reader = new FileReader();
                         reader.onload = (function(e){
 
                               if(this.modelData.get(id)){//update
@@ -38,13 +41,13 @@
                                     });
                                     this.modelData.sync();
                               }
-
+                              //reset form
                               this.set('name','');
-                              elm.target.closest('#addNameView').find('form')[0].reset();
+                              $(elm.target).closest('#addNameView').find('form')[0].reset();
 
                         }).bind(this);//change this
-
-                        reader.readAsDataURL(e.target.closest('#addNameView').find('input:file')[0].files[0]);
+                        //reader, read file as data URL
+                        reader.readAsDataURL(fileInput[0].files[0]);
                   },
                   viewPhotos:function(){
                         wrn.app.navigate('#viewerView?id='+this.currentId);
@@ -53,5 +56,4 @@
                   currentId:0
             })
       };
-
 })(wrn); //pass in namespace

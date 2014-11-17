@@ -1,0 +1,14 @@
+#groupListView .groupListArrow{
+	float:right;
+	display: block;
+	color: #428bca;
+}
+
+#groupListView .deleteGroupBtn{
+	color: #fff;
+}
+
+#groupListView .editGroupNameInput{
+
+}
+

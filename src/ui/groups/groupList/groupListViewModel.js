@@ -18,7 +18,7 @@
 					var id = input.data('id');
 					this.modelData.get(id).set('group',input.val());
 					this.modelData.sync();
-				}).bind(this));
+				}).bind(this));//change this
 			},
 			afterShow:function(){
 				var total = this.modelData.total();
@@ -31,7 +31,7 @@
 				}
 			},
 			forceNoneEditModeIfNeeded:function(e){
-				var btn = e.target.prev('a');
+				var btn = $(e.target).prev('a');
 				if(this.isEditMode === true){
 					btn.text('edit');
 					this.set('isEditMode',false);
@@ -58,7 +58,8 @@
 				this.afterShow();
 			},
 			editMode: function(e){
-				var btn = e.target;
+				console.log(e);
+				var btn = $(e.target);
 				if(this.isEditMode === false){//go into edit mode
 					btn.text('done');
 					this.set('isEditMode',true);

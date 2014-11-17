@@ -6,12 +6,17 @@ data-bind="events:{show:show,hide:hide}"
 >
       <header data-role="header">
       	<div data-role="navbar">
-      		<a data-align="left" href="#groupListView" class="glyphicon glyphicon-chevron-left"></a>
-      		<a data-align="right" data-role="button">edit</a>
-      		<a data-align="right" data-icon="plus" data-role="button" data-bind="click:addImageUi"></a>
+      		<a data-align="left" class="btn btn-default"  href="#groupListView">
+      			<span class="glyphicon glyphicon-chevron-left">
+      		</a>
+      		<a data-align="right" class="btn btn-default editPhotos">edit</a>
+      		<a data-align="right" data-icon="plus" class="btn btn-primary" data-bind="click:addImageUi">
+      			<span class="glyphicon glyphicon-plus"></span>
+      		</a>
       	</div>
       </header>
 
 	<div id="scrollview"></div>
-      
+
+      <div class="alert alert-info" data-bind="invisible:noPhotosNames">click + and add name/photo</div>
 </div>

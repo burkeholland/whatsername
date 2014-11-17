@@ -15,12 +15,21 @@
                   show:function(e){
                         this.currentId = e.view.params.id;
 
-                        if(this.modelData.get(this.currentId) === undefined){return false;}
+                        if(this.modelData.get(this.currentId) === undefined){
+                              console.log(1);
+                              this.set('noPhotosNames',false);
+                              return false;
+                        }else{
+                             this.set('noPhotosNames',true); 
+                        }
 
                         e.view.element.find('#scrollview').kendoMobileScrollView({
                               dataSource: this.modelData.get(this.currentId).imagesAndName,
+                              enablePager:false,
                               template: kendo.template($("#scrollerTemplate").html())
                         });
+
+                        console.log(this.modelData.get(this.currentId).imagesAndName);
                   },
                   hide:function(e){
                         if(e.view.element.find('#scrollview').data("kendoMobileScrollView") !== undefined){
@@ -28,6 +37,7 @@
                               e.view.element.find('#scrollview').empty();
                         }
                   },
+                  noPhotosNames:true,
                   addImageUi:function(){
                         wrn.app.navigate('#addNameView?id='+this.currentId);
                   },

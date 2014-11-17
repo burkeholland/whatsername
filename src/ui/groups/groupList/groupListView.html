@@ -6,16 +6,20 @@ data-bind="events:{init:init,afterShow:afterShow}"
 >
 	<header data-role="header">
 		<div data-role="navbar">
-			<a data-align="right" data-role="button" data-bind="click:editMode">edit</a>
-			<a data-align="right" data-icon="plus" data-role="button" href="#addGroupView" data-bind="events:{click:forceNoneEditModeIfNeeded}"></a>
+			<a data-align="left" class="btn btn-default editGroupBtn" data-bind="click:editMode,invisible:hasGroups">edit</a>
+			Groups
+			<a data-align="right" data-icon="plus" class="btn btn-primary"  href="#addGroupView" data-bind="events:{click:forceNoneEditModeIfNeeded}">
+				<span class="glyphicon glyphicon-plus"></span>
+			</a>
 		</div>
 	</header>
 
-	<div class="well" style="border-radius:0;">
-		<ul class="list-group" data-style="inset" data-bind="source: modelData,invisible:hasGroups" data-template="groupListItemTemplate">
+	<div class="well" style="border-radius:0;" data-bind="invisible:hasGroups">
+		<ul class="list-group" data-style="inset" data-bind="source: modelData" data-template="groupListItemTemplate">
 	        
 	    </ul>
-	    <div class="alert alert-info" data-bind="invisible:noGroups">No groups added yet!</div>
     </div>
+
+    <div class="alert alert-info" data-bind="invisible:noGroups">click + and add a group</div>
 
 </div>

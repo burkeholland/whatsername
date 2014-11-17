@@ -11,7 +11,7 @@
     -->
 
     <!-- CSS include order matters, don't change it! 
-        Order is: kendo > bootstrap > kendoOverides > whatsername > view CSS 
+        Order is: kendo > bootstrap > kendoOverides > bootstrapOverrides > whatsername > view CSS 
     -->
 
     <!-- build:css /thirdparty/thirdparty.css -->
@@ -23,11 +23,13 @@
 
     <!-- build:css whatsername.css -->
     <link href="/shared/css/kendoOverides.css" rel="stylesheet"/>
+    <link href="/shared/css/bootstrapOverides.css" rel="stylesheet"/>
     <link href="/shared/css/whatsername.css" rel="stylesheet"/>
 
     <!-- view CSS -->
      <link href="/ui/appInfo/appInfo.css" rel="stylesheet"/>
      <link href="/ui/nameViewer/viewer/viewerView.css" rel="stylesheet"/>
+     <link href="/ui/groups/groupList/groupList.css" rel="stylesheet"/>
 
      <!-- layout CSS -->
      <link href="/shared/layouts/globalLayout.css" rel="stylesheet"/>

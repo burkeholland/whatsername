@@ -33,3 +33,7 @@
 .km-flat .km-filter-wrap > input:focus {
   border-color: #444;
 }
+
+.km-root a{
+	color: #428bca;
+}
