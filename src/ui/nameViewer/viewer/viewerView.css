@@ -1,0 +1,5 @@
+#viewerView #scrollview .photo{
+	height: 350px;
+	overflow: hidden;
+	text-align: center;
+}

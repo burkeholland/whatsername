@@ -82,5 +82,5 @@
     "yui"           : false,    // Yahoo User Interface
 
     // Custom Globals
-    "globals"       : ["whatsername","wrn","kendo"]        // additional predefined global variables
+    "globals"       : ["whatsername","wrn","kendo","_"]        // additional predefined global variables
 }

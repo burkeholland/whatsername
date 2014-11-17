@@ -2,14 +2,16 @@
 data-role="view" 
 data-layout="default"
 data-model="wrn.addGroup.viewModel"
+data-bind="events:{afterShow:afterShow}"
 >
-	<div data-role="navbar">
-		<a data-align="left" href="#groupListView" data-role="backbutton" class="glyphicon glyphicon-chevron-left"></a>
-		<a data-align="right" data-role="button" data-bind="click: createGroup">add</a>
-	</div>
-
+	<header data-role="header">
+		<div data-role="navbar">
+			<a data-align="left" href="#groupListView"><span class="glyphicon glyphicon-chevron-left"></span></a>
+			<a data-align="right" data-role="button" data-bind="click: createGroup">add</a>
+		</div>
+	</header>
 	<div class="well" style="border-radius:0;">
-			<input type="text" class="form-control" data-bind="value: groupName" placeholder="Enter Group Name">
+		<input type="text" class="form-control" data-bind="value: groupName" placeholder="Enter Group Name">
 	</div>
 
 </div>

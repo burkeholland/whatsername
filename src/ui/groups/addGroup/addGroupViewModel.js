@@ -12,18 +12,21 @@
 			//the actual model
 			modelData: wrn.groupModel,
 			//other properties or functions you want to observe and expose to html
-			createGroup:function(){
+			createGroup:function(e){
 				if(this.groupName.replace(' ','') !== ''){
-					this.modelData.add({group:this.groupName});
+					this.modelData.add({group:this.groupName,id:wrn.makeId()});
 					this.modelData.sync();
+					this.set('groupName','');
+					e.target.closest('#addGroupView').find('input:text').focus();
 				}
+			},
+			afterShow:function(e){
+				e.view.element.find('input:text').focus();
 			},
 			groupName:''
 		})
-		
+
 	};
-
-
 
 })(wrn); //pass in namespace
 

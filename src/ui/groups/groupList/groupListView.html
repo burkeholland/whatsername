@@ -1,17 +1,21 @@
 <div id="groupListView" 
 data-role="view" 
 data-layout="default" 
-data-transition="slide:right" 
 data-model="wrn.groupList.viewModel"
-data-bind="events:{show:show,init:init}"
+data-bind="events:{init:init,afterShow:afterShow}"
 >
-	<div data-role="navbar">
-		<a data-align="left" data-role="button" data-rel="drawer" href="#appInfo" data-icon="info"></a>
-		<a data-align="right" data-role="button">edit</a>
-		<a data-align="right" data-icon="plus" data-role="button" href="#addGroupView"></a>
-	</div>
+	<header data-role="header">
+		<div data-role="navbar">
+			<a data-align="right" data-role="button" data-bind="click:editMode">edit</a>
+			<a data-align="right" data-icon="plus" data-role="button" href="#addGroupView" data-bind="events:{click:forceNoneEditModeIfNeeded}"></a>
+		</div>
+	</header>
 
-	<ul data-role="listview" data-style="inset" data-bind="source: modelData" data-template="groupListItemTemplate">
-        
-    </ul>
+	<div class="well" style="border-radius:0;">
+		<ul class="list-group" data-style="inset" data-bind="source: modelData,invisible:hasGroups" data-template="groupListItemTemplate">
+	        
+	    </ul>
+	    <div class="alert alert-info" data-bind="invisible:noGroups">No groups added yet!</div>
+    </div>
+
 </div>

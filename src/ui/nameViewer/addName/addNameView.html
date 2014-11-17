@@ -1,15 +1,25 @@
-<div id="addNameView" data-role="view" data-layout="default">
-	<div data-role="navbar">
-		<a data-align="left" href="#viewerView" data-role="backbutton" class="glyphicon glyphicon-chevron-left"></a>
-		<a data-align="right" data-role="button" href="">add</a>
-	</div>
-
+<div id="addNameView" 
+data-role="view" 
+data-layout="default"
+data-model="wrn.addName.viewModel"
+data-bind="events:{show:show}"
+>
+	<header data-role="header">
+		<div data-role="navbar">
+			<a data-align="left" data-bind="click:viewPhotos"><span class="glyphicon glyphicon-chevron-left"></span></a>
+			<a data-align="right" data-bind="click:addPhoto" data-role="button">add</a>
+		</div>
+	</header>
+	
+	<form>
 	<div class="well" style="border-radius:0;">
 		<div class="form-group">
-		<input type="text" class="form-control" placeholder="Enter Name">
+			<input type="text" class="form-control" data-bind="value:name" placeholder="Enter Name">
 		</div>
 		<div class="form-group">
-		<input type="file" class="form-control" accept="image/*;capture=camera">
+			<input type="file" class="form-control" accept="image/*;capture=camera">
 		</div>
 	</div>
+	</form>
+	
 </div>
