@@ -29,11 +29,10 @@
                               this.set('yesPhotosNames',false);
                         }
                         this.scroller.setDataSource(this.modelData.get(this.currentId).imagesAndName);
-                        kendo.bind(e.view.element.find('#scrollview'),wrn.viewer.viewModel);
+
                   },
                   hide:function(e){
                         this.scroller.setDataSource([]);
-                        kendo.unbind(e.view.element.find('#scrollview'));
                   },
                   removePhotoName:function(e){
 
@@ -49,7 +48,7 @@
                         }
 
                         this.modelData.sync();
-                        kendo.bind(scroller,wrn.viewer.viewModel);
+
                         wrn.removeDestroyed('viewerModel');
 
                         if(this.modelData.get(this.currentId) === undefined){
@@ -62,7 +61,6 @@
                              this.set('noPhotosNames',true);
                              this.set('yesPhotosNames',false);
                         }
-
                   },
                   noPhotosNames:true,
                   addImageUi:function(){

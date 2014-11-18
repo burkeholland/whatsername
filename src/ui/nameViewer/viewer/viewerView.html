@@ -18,7 +18,7 @@ data-bind="events:{show:show,init:init,hide:hide}"
 
       <div data-bind="text:groupNameBanner" class="groupNameBanner">test</div>
 
-	<div id="scrollview" data-bind="invisible:yesPhotosNames" data-role="scrollview" data-template="scrollerTemplate" data-enable-pager="false"></div>
+	<div id="scrollview" data-bind="source:dataModel,invisible:yesPhotosNames" data-role="scrollview" data-template="scrollerTemplate" data-enable-pager="false"></div>
 
       <div class="alert alert-info" data-bind="invisible:noPhotosNames">click + and add name/photo</div>
 </div>

@@ -1,7 +1,9 @@
 <script id="groupListItemTemplate" type="text/x-kendo-template">
-	<li class="list-group-item" data-role="touch" data-tap="wrn.groupList.viewModel.viewGroup" data-id="#= id#">
+	<li class="list-group-item" data-id="#= id#">
+		<div data-role="touch" data-tap="wrn.groupList.viewModel.viewGroup" data-id="#= id#">
 		<span class="glyphicon glyphicon-chevron-right groupListArrow" data-bind="invisible: isEditMode"></span>
 	    <span data-bind="invisible: isEditMode"> #= group# </span>
+	    </div>
 		<table style="width:100%; border-spacing: 5px;">
 			<tr>
 				<td style="padding-right:10px;">

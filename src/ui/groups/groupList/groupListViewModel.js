@@ -31,7 +31,6 @@
 				}
 			},
 			forceNoneEditModeIfNeeded:function(e){
-				console.log(e);
 				var btn = $(e.target).prev('a');
 				if(this.isEditMode === true){
 					btn.text('edit');
