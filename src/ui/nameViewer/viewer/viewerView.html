@@ -6,11 +6,11 @@ data-bind="events:{show:show,init:init,hide:hide}"
 >
       <header data-role="header">
       	<div data-role="navbar">
-      		<a data-align="left" class="btn btn-default"  href="#groupListView">
+      		<a data-align="left" data-role="button" class="defaultBtn" href="#groupListView">
       			<span class="glyphicon glyphicon-chevron-left"></span>
       		</a>
-      		<a data-align="right" class="btn btn-default editPhotos" data-bind="click:editModeToggle">edit</a>
-      		<a data-align="right" data-icon="plus" class="btn btn-primary" data-bind="click:addImageUi">
+      		<a data-align="right" class="editPhotos defaultBtn" data-role="button" data-bind="click:editModeToggle">edit</a>
+      		<a data-align="right" data-role="button" class="primaryBtn" data-bind="click:addImageUi">
       			<span class="glyphicon glyphicon-plus"></span>
       		</a>
       	</div>

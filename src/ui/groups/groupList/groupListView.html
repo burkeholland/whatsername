@@ -6,9 +6,9 @@ data-bind="events:{init:init,afterShow:afterShow}"
 >
 	<header data-role="header">
 		<div data-role="navbar">
-			<a data-align="left" class="btn btn-default editGroupBtn" data-bind="events:{click:editMode},invisible:hasGroups">edit</a>
+			<a data-align="left" class="editGroupBtn defaultBtn" data-role="button" data-bind="events:{click:editMode},invisible:hasGroups">edit</a>
 			Groups
-			<a data-align="right" class="btn btn-primary" href="#addGroupView" data-bind="events:{click:forceNoneEditModeIfNeeded}">
+			<a data-align="right" class="primaryBtn" href="#addGroupView" data-role="button" data-role="button" data-bind="events:{click:forceNoneEditModeIfNeeded}">
 				<span class="glyphicon glyphicon-plus"></span>
 			</a>
 		</div>

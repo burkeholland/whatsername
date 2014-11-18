@@ -31,6 +31,7 @@
 				}
 			},
 			forceNoneEditModeIfNeeded:function(e){
+				console.log(e);
 				var btn = $(e.target).prev('a');
 				if(this.isEditMode === true){
 					btn.text('edit');
@@ -41,7 +42,7 @@
 			viewGroup:function(e){
 				if(this.isEditMode === true){return false;}
 				//navigate
-				var id = $(e.currentTarget).data('id');
+				var id = $(e.touch.target).data('id');
 				wrn.app.navigate('#viewerView?id='+id);
 			},
 			removeGroup:function(e){
