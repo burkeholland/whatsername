@@ -28,6 +28,7 @@
                                     var imgAndName = this.modelData.get(id).imagesAndName;
                                     imgAndName.push({
                                           image:e.target.result,
+                                          id:wrn.makeId(),
                                           name:this.name,
                                     });
                                     this.modelData.sync();
@@ -36,6 +37,7 @@
                                           id:id,
                                           imagesAndName:[{
                                                 image:e.target.result,
+                                                id:wrn.makeId(),
                                                 name:this.name,
                                           }]
                                     });

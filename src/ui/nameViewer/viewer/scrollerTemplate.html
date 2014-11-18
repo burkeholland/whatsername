@@ -1,4 +1,7 @@
 <script id="scrollerTemplate" type="text/x-kendo-template">
+	<a class="btn btn-danger removePhotoNameBtn" data-bind="click:removePhotoName,invisible:notEditMode" data-id="#: id #">
+		<span class="glyphicon glyphicon-trash"></span>
+	</a>
     <div>
         <div class="photo" style="background-image:url(#: image #)"><!--<img src="#: image #" style="width:100%;">--></div>
         <p class="photoName">#: name #</p>

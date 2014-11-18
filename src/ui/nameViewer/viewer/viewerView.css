@@ -14,3 +14,10 @@
 	font-weight: bold;
 	padding:10px 0;
 }
+
+#viewerView .removePhotoNameBtn{
+	color: #fff;
+	position: absolute;
+	right:7px;
+	top:10px;
+}

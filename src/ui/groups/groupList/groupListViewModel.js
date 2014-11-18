@@ -41,7 +41,7 @@
 			viewGroup:function(e){
 				if(this.isEditMode === true){return false;}
 				//navigate
-				var id = $(e.target).data('id');
+				var id = $(e.currentTarget).data('id');
 				wrn.app.navigate('#viewerView?id='+id);
 			},
 			removeGroup:function(e){
@@ -58,7 +58,6 @@
 				this.afterShow();
 			},
 			editMode: function(e){
-				console.log(e);
 				var btn = $(e.target);
 				if(this.isEditMode === false){//go into edit mode
 					btn.text('done');
