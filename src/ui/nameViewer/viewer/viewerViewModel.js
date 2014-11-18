@@ -18,6 +18,8 @@
                   show:function(e){
                         this.currentId = e.view.params.id;
 
+                        this.set('groupNameBanner',wrn.groupModel.get(this.currentId).group + ' group');
+
                         if(this.modelData.get(this.currentId) === undefined){
                               this.set('noPhotosNames',false);
                               this.set('yesPhotosNames',true);
@@ -76,6 +78,7 @@
                               this.set('notEditMode',false);
                         }
                   },
+                  groupNameBanner:'test',
                   notEditMode:true,
                   yesPhotosNames:false,
                   currentId:'',

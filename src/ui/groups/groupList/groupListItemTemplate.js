@@ -1,5 +1,5 @@
 <script id="groupListItemTemplate" type="text/x-kendo-template">
-	<li class="list-group-item" data-bind="click:viewGroup" data-id="#= id#">
+	<li class="list-group-item" data-bind="events{click:viewGroup}" data-id="#= id#">
 		<span class="glyphicon glyphicon-chevron-right groupListArrow" data-bind="invisible: isEditMode"></span>
 	    <span data-bind="invisible: isEditMode"> #= group# </span>
 		<table style="width:100%; border-spacing: 5px;">

@@ -7,7 +7,8 @@ data-bind="events:{afterShow:afterShow}"
 	<header data-role="header">
 		<div data-role="navbar">
 			<a data-align="left" class="btn btn-default" href="#groupListView"><span class="glyphicon glyphicon-chevron-left"></span></a>
-			<a data-align="right" class="btn btn-primary" data-bind="click: createGroup">add</a>
+			Add A Group
+			<a data-align="right" class="btn btn-primary" data-bind="events{click: createGroup}">add</a>
 		</div>
 	</header>
 	<div class="well" style="border-radius:0;">

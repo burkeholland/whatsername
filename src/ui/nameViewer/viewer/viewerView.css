@@ -22,3 +22,18 @@
 	right:7px;
 	top:10px;
 }
+
+#viewerView .groupNameBanner{
+	color: #fff;
+	background-color: #428BCA;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	border-top: 1px solid #357EBD;
+	border-bottom: 1px solid #357EBD;
+	text-overflow: ellipsis;
+	padding:3px 0;
+	font-weight: normal;
+	font-size: 10px;
+	text-transform: uppercase;
+}
