@@ -31,17 +31,17 @@
 				}
 			},
 			forceNoneEditModeIfNeeded:function(e){
-				var btn = $(e.target).prev('a');
 				if(this.isEditMode === true){
-					btn.text('edit');
+					this.set('editButtonText', 'edit');
 					this.set('isEditMode',false);
 					this.set('notEditMode',true);
 				}
+				wrn.app.navigate('#addGroupView');
 			},
 			viewGroup:function(e){
 				if(this.isEditMode === true){return false;}
 				//navigate
-				var id = $(e.touch.target).data('id');
+				var id = $(e.currentTarget).data('id');
 				wrn.app.navigate('#viewerView?id='+id);
 			},
 			removeGroup:function(e){
@@ -60,15 +60,16 @@
 			editMode: function(e){
 				var btn = $(e.target);
 				if(this.isEditMode === false){//go into edit mode
-					btn.text('done');
+					this.set('editButtonText', 'done');
 					this.set('isEditMode',true);
 					this.set('notEditMode',false);
 				}else{//stop edit mode
-					btn.text('edit');
+					this.set('editButtonText', 'edit');
 					this.set('isEditMode',false);
 					this.set('notEditMode',true);
 				}
 			},
+			editButtonText: 'edit',
 			noGroups:true,
 			hasGroups:true,
 			isEditMode:false,
