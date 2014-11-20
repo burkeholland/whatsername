@@ -2,6 +2,9 @@
 
 	'use strict';
 
+	// variables used inside of the model, but not accessible in the view
+	var txtAddGroup;
+
 	//below you place anything private you don't want exposed in the viewModel
 
 	//below we create the viewModel
@@ -17,11 +20,15 @@
 					this.modelData.add({group:this.groupName,id:wrn.makeId()});
 					this.modelData.sync();
 					this.set('groupName','');
-					$(e.target).closest('#addGroupView').find('input:text').focus();
+					txtAddGroup.focus();
 				}
 			},
+			init: function(e) {
+				// capture all needed element references on view init and store them for later use
+				txtAddGroup = e.view.content.find('input:text');
+			},
 			afterShow:function(e){
-				e.view.element.find('input:text').focus();
+				txtAddGroup.focus();
 			},
 			groupName:''
 		})
