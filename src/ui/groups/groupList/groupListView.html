@@ -3,23 +3,25 @@ data-role="view"
 data-layout="default" 
 data-model="wrn.groupList.viewModel"
 data-bind="events:{init:init,afterShow:afterShow}"
+data-title="Groups"
 >
   <header data-role="header">
     <div data-role="navbar">
-      <a data-align="left" class="btn btn-default editGroupBtn" data-bind="click:editMode,invisible:hasGroups, text: editButtonText"></a>
-      Groups
+      <a data-role="button" data-align="left" data-bind="click:editMode,visible:editButtonVisible"/>edit</a>
+      <a data-role="button" data-align="left" data-bind="click:editMode,visible:isEditMode"/>done</a>
+      <span data-role="view-title"></span>
       <a data-align="right" data-icon="plus" class="btn btn-primary" data-bind="click:forceNoneEditModeIfNeeded">
         <span class="glyphicon glyphicon-plus"></span>
       </a>
     </div>
   </header>
 
-  <div class="well" style="border-radius:0;" data-bind="invisible:hasGroups">
+  <div class="well" style="border-radius:0;" data-bind="visible:hasGroups">
     <ul data-role="listview" class="list-group" data-style="inset" data-bind="source: modelData" data-template="groupListItemTemplate">
           
       </ul>
     </div>
 
-    <div class="alert alert-info" data-bind="invisible:noGroups">click + and add a group</div>
+    <div class="alert alert-info" data-bind="invisible:hasGroups">click + and add a group</div>
 
 </div>

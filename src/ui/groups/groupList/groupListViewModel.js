@@ -23,11 +23,11 @@
 			afterShow:function(){
 				var total = this.modelData.total();
 				if(total === 0){
-					this.set('noGroups',false);
-					this.set('hasGroups',true);
-				}else{
 					this.set('noGroups',true);
 					this.set('hasGroups',false);
+				}else{
+					this.set('noGroups',false);
+					this.set('hasGroups',true);
 				}
 			},
 			forceNoneEditModeIfNeeded:function(e){
@@ -55,7 +55,7 @@
 				//remove destoryed
 				wrn.removeDestroyed('groupModel');
 				wrn.removeDestroyed('viewerModel');
-				this.afterShow();
+				this.afterShow();	
 			},
 			editMode: function(e){
 				var btn = $(e.target);
@@ -69,7 +69,9 @@
 					this.set('notEditMode',true);
 				}
 			},
-			editButtonText: 'edit',
+			editButtonVisible: function() {
+				return this.get('notEditMode') && this.get('hasGroups');
+			},
 			noGroups:true,
 			hasGroups:true,
 			isEditMode:false,
