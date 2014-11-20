@@ -45,7 +45,7 @@
 				wrn.app.navigate('#viewerView?id='+id);
 			},
 			removeGroup:function(e){
-				var id = $(e.target).closest('li').data('id');
+				var id = e.data.id;
 				//remove
 				this.modelData.remove(this.modelData.get(id));//remove from groupModel
 				wrn.viewerModel.remove(wrn.viewerModel.get(id));//remove from viewerModel
